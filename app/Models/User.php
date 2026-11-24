@@ -48,8 +48,10 @@ class User extends Authenticatable
     public function rolesList(): array
     {
         return $this->roles()
-            ->pluck('name')
+            ->get()
+            ->map(fn (UserRole $userRole): string => $userRole->role->value)
             ->unique()
+            ->values()
             ->all();
     }
 
