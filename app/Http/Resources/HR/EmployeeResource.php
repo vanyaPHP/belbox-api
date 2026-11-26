@@ -30,12 +30,18 @@ class EmployeeResource extends JsonResource
             ], null),
             'head' => $this->whenLoaded(
                 'head',
-                $this->head?->user?->full_name,
+                [
+                    'id' => $this->head?->id,
+                    'full_name' => $this->head?->user?->full_name
+                ],
                 null
             ),
             'manager' => $this->whenLoaded(
                 'manager',
-                $this->manager?->user?->full_name,
+                [
+                    'id' => $this->manager?->id,
+                    'full_name' => $this->manager?->user?->full_name
+                ],
                 null
             ),
             'status' => $this->status->value,
