@@ -33,7 +33,7 @@ class EmployeeResource extends JsonResource
                 $this->head?->user?->full_name,
                 null
             ),
-            'manager' => $this->whenExistsLoaded(
+            'manager' => $this->whenLoaded(
                 'manager',
                 $this->manager?->user?->full_name,
                 null
