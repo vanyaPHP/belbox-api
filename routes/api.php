@@ -12,3 +12,8 @@ Route::prefix('/auth')->name('auth.')->group(function () {
         });
     });
 });
+
+Route::middleware(['auth:sanctum'])
+    ->prefix('/hr')
+    ->name('hr.')
+    ->group(base_path('routes/hr.php'));

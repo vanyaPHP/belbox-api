@@ -6,5 +6,9 @@ namespace App\Enums\Identity;
 
 enum Permission: string
 {
-
+    case ReadEmployees = 'read:employees';
+    case WriteEmployees = 'write:employees';
+    case ReadHirings = 'read:hirings';
+    case ApproveHirings = 'approve:hirings';
+    case RejectHirings = 'reject:hirings';
 }
