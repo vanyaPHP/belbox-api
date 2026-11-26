@@ -37,6 +37,7 @@ final readonly class EmployeeService
 
                 return Employee::query()->create([
                     'user_id' => $user->id,
+                    'manager_id' => auth()->user()->employee->id,
                     'status' => EmployeeStatus::Pending,
                     'start_date' => Carbon::createFromFormat('Y-m-d', $data->input('start_date')),
                     'phone_number' => $data->input('phone_number'),
